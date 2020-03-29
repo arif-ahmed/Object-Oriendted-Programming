@@ -4,6 +4,12 @@
     using Contracts;
     public class ShoppingCart
     {
+        private readonly IPriceCalculator _priceCalculator;
+        public ShoppingCart(IPriceCalculator priceCalculator)
+        {
+            _priceCalculator = priceCalculator;
+        }
+
         public decimal TotalAmount 
         {
             get
@@ -12,20 +18,7 @@
 
                 foreach (var item in Items)
                 {
-                    if (item.Identifier.StartsWith("Each"))
-                    {
-                        totalAmount += item.Quantity * 4m;
-                    }
-                    else if (item.Identifier.StartsWith("Weight"))
-                    {
-                        totalAmount += item.Quantity * 3m / 1000; //1 kilogram
-                    }
-                    else if (item.Identifier.StartsWith("Spec"))
-                    {
-                        totalAmount += item.Quantity * .3m;
-                        int setsOfFour = item.Quantity / 4;
-                        totalAmount -= setsOfFour * .15m; //discount on groups of 4 items
-                    }
+                    totalAmount += _priceCalculator.CalculatePrice(item);
                 }
 
                 return totalAmount;
