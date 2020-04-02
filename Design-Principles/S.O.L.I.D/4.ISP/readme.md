@@ -55,20 +55,60 @@ public class Robot : IWorker
 * Small and Cohesive "Role" Interfaces
 
 ```c#
-public interface IWorker
-{
-  void Work();
-}
+  public interface IWorker
+  {
+    void Work();
+  }
 
-public interface ISleeper
-{
-  void Sleep();
-}
+  public interface ISleeper
+  {
+    void Sleep();
+  }
 
-public class Robot : IWorker
-{
-  void Work() { // Do some work… }
-}
+  public class Robot : IWorker
+  {
+    void Work() { // Do some work… }
+  }
 ```
 
+#### Adapter Pattern
 
+- Problem that the Adapter pattern solves
+ * Reusing classes that do not have an interface that
+a client requires
+
+ * Making classes with incompatible interfaces work
+together
+
+ * Providing an alternative interface for a class
+
+ * Convert the incompatible interface of a class Adaptee into
+another interface – Target, that clients require
+
+ * Define a separate class – Adapter, that does the job
+ 
+ ```c#
+ interface Target
+ {
+    void Request();
+ }
+ 
+ class Adaptee
+ {
+   public void SpecificRequest()
+   {
+     Console.Write("Called SpecificRequest()");
+   }
+  }
+  
+ class Adapter : Target
+ {
+   private Adaptee adaptee = new Adaptee();
+ 
+   public void Request()
+   {
+     // Possibly do some other work
+     adaptee.SpecificRequest();
+   }
+ }
+ ```
