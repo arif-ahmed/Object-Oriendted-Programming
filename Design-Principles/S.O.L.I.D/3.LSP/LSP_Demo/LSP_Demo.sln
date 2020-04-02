@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce", "Ecommerce\Ecommerce.csproj", "{0B6BD96D-19F8-4F66-8FA5-60B38A3B17AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce", "Ecommerce\Ecommerce.csproj", "{0B6BD96D-19F8-4F66-8FA5-60B38A3B17AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Details_Printer", "Details_Printer\Details_Printer.csproj", "{681D101C-5901-46FF-B20A-7402FA990A56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Details_Printer", "Details_Printer\Details_Printer.csproj", "{681D101C-5901-46FF-B20A-7402FA990A56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{732541DF-DE7F-4162-B9FA-3DB01C65D6BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{732541DF-DE7F-4162-B9FA-3DB01C65D6BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeBonusCalculation", "EmployeeBonusCalculation\EmployeeBonusCalculation.csproj", "{AB6BF851-9544-41CE-B67B-8D329655C6F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagementSystem", "EmployeeManagementSystem\EmployeeManagementSystem.csproj", "{3CAF0BEF-82A9-4BD3-BB49-BFD8890E28F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchPrinting", "BatchPrinting\BatchPrinting.csproj", "{FCA0F2E3-5DBF-4A3B-973A-B417B6F8A0DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{732541DF-DE7F-4162-B9FA-3DB01C65D6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{732541DF-DE7F-4162-B9FA-3DB01C65D6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{732541DF-DE7F-4162-B9FA-3DB01C65D6BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB6BF851-9544-41CE-B67B-8D329655C6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB6BF851-9544-41CE-B67B-8D329655C6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB6BF851-9544-41CE-B67B-8D329655C6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB6BF851-9544-41CE-B67B-8D329655C6F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CAF0BEF-82A9-4BD3-BB49-BFD8890E28F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CAF0BEF-82A9-4BD3-BB49-BFD8890E28F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CAF0BEF-82A9-4BD3-BB49-BFD8890E28F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CAF0BEF-82A9-4BD3-BB49-BFD8890E28F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA0F2E3-5DBF-4A3B-973A-B417B6F8A0DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA0F2E3-5DBF-4A3B-973A-B417B6F8A0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA0F2E3-5DBF-4A3B-973A-B417B6F8A0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA0F2E3-5DBF-4A3B-973A-B417B6F8A0DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
