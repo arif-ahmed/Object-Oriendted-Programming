@@ -7,3 +7,5 @@ B. Abstractions should not depend upon details. Details should depend upon abstr
 
 <b> Case 1: Dependency not inverted (High level module depend on low level interface) </b>
 
+References:
+* [A curry of Dependency Inversion Principle (DIP), Inversion of Control (IoC), Dependency Injection (DI) and IoC Container](https://www.codeproject.com/Articles/538536/A-curry-of-Dependency-Inversion-Principle-DIP-Inve)
