@@ -11,6 +11,10 @@ B. Abstractions should not depend upon details. Details should depend upon abstr
 
 ![alt text](https://i0.wp.com/blogs.innovationm.com/wp-content/uploads/2017/11/DependencyInversionPrinciple.jpg?fit=624%2C499)
 
+### Dependencies and Coupling
+* Depend directly on other modules - Tight Coupling
+* Depend on abstractions - Loose Coupling
+
 ### DIP Violations
 * Classic DIP Violations:
     * Using the new keyword
