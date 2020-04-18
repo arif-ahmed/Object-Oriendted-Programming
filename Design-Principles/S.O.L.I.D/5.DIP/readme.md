@@ -7,9 +7,18 @@ B. Abstractions should not depend upon details. Details should depend upon abstr
 
 <b> Case 1: Dependency not inverted (High level module depend on low level interface) </b>
 
-![alt text](https://3.bp.blogspot.com/-lT5q92aO_og/T8uM-Ppb7II/AAAAAAAAGu8/unWnRCAmTpk/s400/DependencyInversion.jpg)
+![alt text](https://lh3.googleusercontent.com/proxy/VE7XI9R4miWeI8IlvvhDGkNvJd7i5durwZGL-WsdGDMK06etTfv4Fh1TUgsbc_KG7q7hi5360P1aPgATSuWiscIdgMmc6vK9n7w2HebJsQ)
 
 ![alt text](https://i0.wp.com/blogs.innovationm.com/wp-content/uploads/2017/11/DependencyInversionPrinciple.jpg?fit=624%2C499)
+
+### DIP Violations
+* Classic DIP Violations:
+    * Using the new keyword
+    * Using static methods / properties
+
+* How to fix code, that violates the DIP:
+   * Extract interfaces + use constructor injection
+   * Set up an Inversion of Control (IoC) container
 
 References:
 * [A curry of Dependency Inversion Principle (DIP), Inversion of Control (IoC), Dependency Injection (DI) and IoC Container](https://www.codeproject.com/Articles/538536/A-curry-of-Dependency-Inversion-Principle-DIP-Inve)
