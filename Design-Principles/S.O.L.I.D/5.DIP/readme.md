@@ -2,10 +2,9 @@
 
 Instead of lower level modules defining an interface that higher level module depend on, higher level modules define an interface that lower level module implement.
 
-A. High-level modules should not depend on low-level modules. Both should depend on abstractions.\
-B. Abstractions should not depend upon details. Details should depend upon abstractions.
+<b> A. High-level modules should not depend on low-level modules. Both should depend on abstractions.</b>\
+<b> B. Abstractions should not depend upon details. Details should depend upon abstractions. </b>
 
-<b> Case 1: Dependency not inverted (High level module depend on low level interface) </b>
 
 ![alt text](https://lh3.googleusercontent.com/proxy/VE7XI9R4miWeI8IlvvhDGkNvJd7i5durwZGL-WsdGDMK06etTfv4Fh1TUgsbc_KG7q7hi5360P1aPgATSuWiscIdgMmc6vK9n7w2HebJsQ)
 
