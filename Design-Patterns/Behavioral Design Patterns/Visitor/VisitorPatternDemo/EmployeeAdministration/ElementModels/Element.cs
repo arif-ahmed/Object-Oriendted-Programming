@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using VisitorPatternDemo.EmployeeAdministration.VisitorModels;
 
 namespace VisitorPatternDemo.EmployeeAdministration.ElementModels
 {
@@ -9,6 +10,6 @@ namespace VisitorPatternDemo.EmployeeAdministration.ElementModels
     /// </summary>
     public abstract class Element
     {
-        
+        public abstract void Accept(IVisitor visitor);
     }
 }
