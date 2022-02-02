@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieFlix.FakeDataStore\MovieFlix.FakeDataStore.csproj" />
+    <ProjectReference Include="..\MovieFlix.Models\MovieFlix.Models.csproj" />
+  </ItemGroup>
+
+</Project>
