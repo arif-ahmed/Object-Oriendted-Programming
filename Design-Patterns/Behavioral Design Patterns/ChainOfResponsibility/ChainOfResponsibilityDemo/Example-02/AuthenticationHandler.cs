@@ -2,7 +2,7 @@
 {
     public class AuthenticationHandler : RequestHandlerBase
     {
-        public override void ProcessRequest(Request request)
+        protected override void ProcessRequest(Request request)
         {
             Console.WriteLine("Authentication handler processing request");
         }

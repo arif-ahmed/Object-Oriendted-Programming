@@ -24,6 +24,6 @@ namespace ChainOfResponsibilityDemo.Example_02
             _handler = handler;
         }
 
-        public abstract void ProcessRequest(Request request);
+        protected abstract void ProcessRequest(Request request);
     }
 }
