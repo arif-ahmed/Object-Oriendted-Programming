@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using VisitorPatternDemo.Concept;
 using VisitorPatternDemo.EmployeeAdministration.ElementModels;
 using VisitorPatternDemo.EmployeeAdministration.VisitorModels;
 
@@ -9,6 +10,11 @@ namespace VisitorPatternDemo
     {
         static void Main(string[] args)
         {
+            ConceptDemo();
+        }
+
+        static void EmployeeAdministrationDemo()
+        {
             var employees = new List<Employee>
             {
                 new Clerk("Peter"),
@@ -16,7 +22,7 @@ namespace VisitorPatternDemo
                 new President("Georgi")
             };
 
-            IVisitor bonusCalculator = new BonusCalculator();
+            EmployeeAdministration.VisitorModels.IVisitor bonusCalculator = new BonusCalculator();
 
             foreach (var employee in employees)
             {
@@ -27,6 +33,17 @@ namespace VisitorPatternDemo
 
                 Console.WriteLine();
             }
+        }
+    
+        static void ConceptDemo()
+        {
+            IComponent componentA = new ConcreteComponentA();
+            IComponent componentB = new ConcreteComponentB();
+
+            Concept.IVisitor concreteVisitorA = new ConcreteVisitorA();
+            Concept.IVisitor concreteVisitorB = new ConcreteVisitorB();
+
+            componentA.Accept(concreteVisitorA);
         }
     }
 }

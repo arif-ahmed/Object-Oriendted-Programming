@@ -1,5 +1,6 @@
 ﻿using Observer.CriminalSurveillanceSystem;
 using Observer.Example_01;
+using Observer.Structure;
 using System;
 
 namespace Observer
@@ -8,7 +9,9 @@ namespace Observer
     {
         static void Main(string[] args)
         {
-            Example_01();
+            Structure();
+            // CriminalSurveillanceSystem();
+            // Example_01();
             Console.ReadKey();
         }
 
@@ -39,6 +42,18 @@ namespace Observer
             ibm.Price = 121.00;
             ibm.Price = 120.50;
             ibm.Price = 120.75;
+        }
+
+        static void Structure()
+        {
+            // Configure Observer pattern
+            ConcreteSubject s = new ConcreteSubject();
+            s.Attach(new ConcreteObserver(s, "X"));
+            s.Attach(new ConcreteObserver(s, "Y"));
+            s.Attach(new ConcreteObserver(s, "Z"));
+            // Change subject and notify observers
+            s.SubjectState = "ABC";
+            s.Notify();
         }
     }
 }
