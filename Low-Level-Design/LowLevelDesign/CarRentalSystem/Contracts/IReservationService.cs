@@ -4,8 +4,8 @@ namespace CarRentalSystem.Contracts
 {
     public interface IReservationService
     {
-        void CreateReservation();
-        void UpdateReservation();
-        void CancelReservation();
+        void CreateReservation(Reservation reservation);
+        void UpdateReservation(Reservation reservation);
+        void CancelReservation(Reservation reservation);
     }
 }

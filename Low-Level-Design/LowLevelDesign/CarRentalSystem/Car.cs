@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarRentalSystem
+﻿namespace CarRentalSystem
 {
     public class Car
     {
@@ -13,5 +7,6 @@ namespace CarRentalSystem
         public int Year { get; set; }
         public string LicensePlate { get; set; }
         public double RentalPricePerDay { get; set; }
+        public bool Available { get; set; }
     }
 }
