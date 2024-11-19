@@ -1,5 +1,6 @@
 ﻿using Observer.CriminalSurveillanceSystem;
 using Observer.Example_01;
+using Observer.NewsNotificationSystem;
 using Observer.Structure;
 using System;
 
@@ -9,9 +10,10 @@ namespace Observer
     {
         static void Main(string[] args)
         {
-            Structure();
+            // Structure();
             // CriminalSurveillanceSystem();
             // Example_01();
+            NewsNotificationSystem();
             Console.ReadKey();
         }
 
@@ -54,6 +56,39 @@ namespace Observer
             // Change subject and notify observers
             s.SubjectState = "ABC";
             s.Notify();
+        }
+        static void NewsNotificationSystem() 
+        {
+            NewsAgency newsAgency = new NewsAgency();
+            User user = new User();
+            newsAgency.Attach(user);
+            newsAgency.BroadcastNews("HH", "HHH");
+
+            /** 
+             *             // Create the subject (News Agency)
+            var newsAgency = new NewsAgency();
+
+            // Create observers (Subscribers)
+            var sportsSubscriber = new Subscriber("Sports Enthusiast");
+            var weatherSubscriber = new Subscriber("Meteorologist");
+            var politicsSubscriber = new Subscriber("Political Analyst");
+
+            // Subscribe to topics
+            newsAgency.Subscribe("Sports", sportsSubscriber);
+            newsAgency.Subscribe("Weather", weatherSubscriber);
+            newsAgency.Subscribe("Politics", politicsSubscriber);
+
+            // Publish news updates
+            newsAgency.PublishNews("Sports", "Breaking: Local team wins the championship!");
+            newsAgency.PublishNews("Weather", "Alert: Heavy rain expected tomorrow.");
+            newsAgency.PublishNews("Politics", "Election results are out!");
+
+            // Unsubscribe a subscriber and publish more news
+            newsAgency.Unsubscribe("Weather", weatherSubscriber);
+            newsAgency.PublishNews("Weather", "Update: Thunderstorm warning issued.");
+
+            Console.ReadLine();
+            **/
         }
     }
 }
