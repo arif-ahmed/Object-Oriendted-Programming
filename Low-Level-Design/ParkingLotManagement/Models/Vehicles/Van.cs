@@ -2,7 +2,7 @@
 
 namespace ParkingLotManagement.Models.Vehicles
 {
-    internal class Van : IVehicle
+    public class Van : IVehicle
     {
     }
 }

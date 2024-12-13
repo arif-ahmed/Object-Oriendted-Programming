@@ -1,4 +1,5 @@
 ﻿using ParkingLotManagement.Infrastructure;
+using ParkingLotManagement.Models;
 
 namespace ParkingLotManagement
 {
