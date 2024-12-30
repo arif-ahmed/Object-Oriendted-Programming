@@ -5,6 +5,13 @@ namespace AssetSync.CLI.Implementations
 {
     public class MachineFileSystem : IIntegrationComponent, IFileSystemService
     {
+        private IDownloader _downloader;
+
+        public MachineFileSystem(IDownloader downloader)
+        {
+            _downloader = downloader;
+        }
+
         public bool Exist(string path)
         {
             return true;
