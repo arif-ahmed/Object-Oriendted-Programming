@@ -11,8 +11,8 @@ namespace AssetSync.CLI
 
 
         public List<ISyncService> SyncServices { get; set; } = new List<ISyncService> 
-        { 
-            new FileToDAMSyncService(new MachineFileSystem(), new BrandshareDAM(new BrandshareDAMService())) 
+        {
+            new FileToDAMSyncService(new MachineFileSystem(), new BrandshareDAM(new BrandshareDAMService(), new S3BucketUploader())) 
         };
 
         // Private constructor to prevent direct instantiation

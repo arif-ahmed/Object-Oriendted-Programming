@@ -66,6 +66,8 @@ namespace AssetSync.CLI.Contracts
         //);
 
         Task<bool> TestConnection();
+        Task<bool> CreateFolder(string name);
+        Task<bool> CreateItem(string name);
 
         //MarcomboxFilesAndFoldersCount GetMarcomboxFilesAndFoldersCount(string syncJobId);
 

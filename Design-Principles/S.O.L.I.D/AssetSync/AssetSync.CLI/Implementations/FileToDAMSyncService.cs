@@ -8,12 +8,6 @@ namespace AssetSync.CLI.Implementations
         
         protected override async Task ImplementSync()
         {
-            /**
-             * read source directory
-             * read files of current directory
-             * 
-            **/
-
             bool exist = source.Exist("");
 
             if (!exist) 
@@ -21,10 +15,14 @@ namespace AssetSync.CLI.Implementations
                 return;
             }
 
+            bool created = await target.CreateFolder("");
+            var files = source.GetFiles("");
 
+            foreach (var file in files) 
+            {
+                await target.CreateItem(file);
+            }
 
-
-            //var isConnected = await target.TestConnection();
 
             Console.WriteLine($"{typeof(FileToDAMSyncService).Name} Running");
             await Task.CompletedTask;
