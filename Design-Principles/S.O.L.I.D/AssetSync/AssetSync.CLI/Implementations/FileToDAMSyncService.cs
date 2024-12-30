@@ -9,7 +9,9 @@ namespace AssetSync.CLI.Implementations
         
         protected override async Task ImplementSync()
         {
-            Console.WriteLine($"{typeof(FileToDAMSyncService).Name} Running");
+            var isConnected = await _target.TestConnection();
+
+            Console.WriteLine($"{typeof(FileToDAMSyncService).Name} Running: {isConnected}");
             await Task.CompletedTask;
         }
     }

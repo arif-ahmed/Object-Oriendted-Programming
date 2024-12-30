@@ -3,7 +3,7 @@ using AssetSync.CLI.Contracts;
 
 namespace AssetSync.CLI.Implementations
 {
-    public abstract class SyncJobService<TSouce, TTarget> : ISyncService where TSouce : IIntegrationComponent where TTarget : IIntegrationComponent, new()
+    public abstract class SyncJobService<TSouce, TTarget> : ISyncService where TSouce : IIntegrationComponent where TTarget : IIntegrationComponent
     {
         protected TSouce _souce;
         protected TTarget _target;

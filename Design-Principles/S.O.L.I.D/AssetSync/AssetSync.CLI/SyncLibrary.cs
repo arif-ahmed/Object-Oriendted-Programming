@@ -9,7 +9,11 @@ namespace AssetSync.CLI
         // Lazy<T> ensures the instance is created in a thread-safe and lazy manner
         private static readonly Lazy<SyncLibrary> _lazyInstance = new(() => new SyncLibrary());
 
-        public List<ISyncService> SyncServices { get; set; } = new List<ISyncService> { new FileToDAMSyncService(new MachineFileSystem(), new BrandshareDAM()) };
+
+        public List<ISyncService> SyncServices { get; set; } = new List<ISyncService> 
+        { 
+            new FileToDAMSyncService(new MachineFileSystem(), new BrandshareDAM(new BrandshareDAMService())) 
+        };
 
         // Private constructor to prevent direct instantiation
         private SyncLibrary()

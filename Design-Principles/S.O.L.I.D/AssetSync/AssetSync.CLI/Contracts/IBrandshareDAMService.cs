@@ -65,7 +65,7 @@ namespace AssetSync.CLI.Contracts
         //    int affectedFiles
         //);
 
-        bool TestConnection();
+        Task<bool> TestConnection();
 
         //MarcomboxFilesAndFoldersCount GetMarcomboxFilesAndFoldersCount(string syncJobId);
 
