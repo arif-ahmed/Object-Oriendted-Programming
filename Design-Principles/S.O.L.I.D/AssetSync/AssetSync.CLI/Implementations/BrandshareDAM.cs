@@ -6,7 +6,6 @@ namespace AssetSync.CLI.Implementations
     public class BrandshareDAM : IIntegrationComponent, IBrandshareDAMService
     {
         private IBrandshareDAMService _brandshareDAMService;
-
         public BrandshareDAM(IBrandshareDAMService brandshareDAMService) 
         {
             _brandshareDAMService = brandshareDAMService;

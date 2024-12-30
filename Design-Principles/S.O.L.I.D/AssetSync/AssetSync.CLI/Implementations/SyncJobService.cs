@@ -5,13 +5,13 @@ namespace AssetSync.CLI.Implementations
 {
     public abstract class SyncJobService<TSouce, TTarget> : ISyncService where TSouce : IIntegrationComponent where TTarget : IIntegrationComponent
     {
-        protected TSouce _souce;
-        protected TTarget _target;
+        protected TSouce source;
+        protected TTarget target;
 
         public SyncJobService(TSouce souce, TTarget target)
         {
-            _souce = souce;
-            _target = target;
+            this.source = souce;
+            this.target = target;
         }
 
         public async Task StartAsync()

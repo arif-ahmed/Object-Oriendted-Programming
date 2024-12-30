@@ -1,5 +1,4 @@
-﻿
-
+﻿using AssetSync.CLI.Contracts;
 
 namespace AssetSync.CLI.Implementations
 {
@@ -9,9 +8,25 @@ namespace AssetSync.CLI.Implementations
         
         protected override async Task ImplementSync()
         {
-            var isConnected = await _target.TestConnection();
+            /**
+             * read source directory
+             * read files of current directory
+             * 
+            **/
 
-            Console.WriteLine($"{typeof(FileToDAMSyncService).Name} Running: {isConnected}");
+            bool exist = source.Exist("");
+
+            if (!exist) 
+            {
+                return;
+            }
+
+
+
+
+            //var isConnected = await target.TestConnection();
+
+            Console.WriteLine($"{typeof(FileToDAMSyncService).Name} Running");
             await Task.CompletedTask;
         }
     }
