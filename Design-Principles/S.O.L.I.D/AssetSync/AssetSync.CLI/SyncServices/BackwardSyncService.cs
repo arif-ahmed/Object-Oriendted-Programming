@@ -19,7 +19,7 @@ namespace AssetSync.CLI.SyncServices
             List<string> folders = await _brandshareDAMService.GetFolders("<job-id>");
             foreach (string folder in folders) 
             {
-                _driveManager.CreateFolder(folder);
+                await _driveManager.CreateFolder(folder);
                 List<string> files = await _brandshareDAMService.GetItems(folder);
 
                 foreach (string file in files) 
