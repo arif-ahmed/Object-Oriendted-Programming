@@ -4,6 +4,8 @@ using MovieFlix.Models.Contracts;
 using MovieFlix.Repositories.Contracts;
 using MovieFlix.Utilities;
 using System.Linq;
+using System;
+using System.Collections.Generic;
 
 namespace MovieFlix.Manager
 {
@@ -73,7 +75,10 @@ namespace MovieFlix.Manager
             }
 
             List<Genre> genres = user.WatchedHistories.Select(x => x.Genre).ToList();
-            List<Movie> movies = user.WatchList.Where(x => genres.Contains(x.Genre) && !user.WatchedHistories.Any(wh => wh.Id == x.Id)).ToList();
+            List<Movie> movies = user.WatchList
+                .Where(x => genres.Contains(x.Genre))
+                .Where(x => !user.WatchedHistories.Select(wh => wh.Id).Contains(x.Id))
+                .ToList();
             return await Task.FromResult(movies);
         }
 
@@ -90,6 +95,12 @@ namespace MovieFlix.Manager
         public async Task UpdateUser(int id, User user)
         {
             await _userRepository.Update(user);
+        }
+
+        public async Task<IEnumerable<Movie>> GetWatchList(int userId)
+        {
+            var user = await _userRepository.FindById(userId);
+            return user?.WatchList ?? Enumerable.Empty<Movie>();
         }
     }
 }

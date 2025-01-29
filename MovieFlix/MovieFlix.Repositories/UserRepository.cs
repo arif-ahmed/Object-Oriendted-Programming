@@ -1,5 +1,4 @@
-﻿
-using MovieFlix.FakeDataStore;
+﻿using MovieFlix.FakeDataStore;
 using MovieFlix.Models;
 using MovieFlix.Repositories.Contracts;
 using System.Linq;
@@ -29,9 +28,9 @@ namespace MovieFlix.Repositories
             return await Task.FromResult(users);
         }
 
-        public async Task<User> FindById(int id)
+        public async Task<User?> FindById(int id)
         {
-            return await Task.FromResult(_dbContext.Users.First(user => user.Id == id));
+            return await Task.FromResult(_dbContext.Users.FirstOrDefault(user => user.Id == id));
         }
 
         public async Task Insert(User entity)

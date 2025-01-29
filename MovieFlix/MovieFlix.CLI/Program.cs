@@ -25,6 +25,7 @@ namespace MovieFlix.CLI
             await userManager.AddMovieToWatchList(1, 2);
 
             await userManager.GetRecommendedMovies(1);
+
         }
     }
 }

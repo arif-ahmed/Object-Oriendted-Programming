@@ -58,7 +58,7 @@ namespace MovieFlix.Manager.Tests
             await _movieManager.AddMovie(new Movie(3, "The Dark Knight", "Batman faces the Joker, a criminal mastermind who wants to plunge Gotham City into anarchy.", Genre.Action));
             await _movieManager.AddMovie(new Movie(4, "Superbad", "Two co-dependent high school seniors are forced to deal with separation anxiety.", Genre.Comedy));
             await _movieManager.AddMovie(new Movie(5, "Get Out", "A young African-American visits his white girlfriend's parents for the weekend.", Genre.Horror));
-            await _movieManager.AddMovie(new Movie(6, "Interstellar", "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.", Genre.Action));
+            await _movieManager.AddMovie(new Movie(6, "Interstellar", "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.", Genre.ScienceFiction));
 
             await _userManager.InsertUser(new User(1, "Arif Ahmed"));
 
