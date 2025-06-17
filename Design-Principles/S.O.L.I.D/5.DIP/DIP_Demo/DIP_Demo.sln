@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29905.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DIP_Demo", "DIP_Demo\DIP_Demo.csproj", "{06018BFF-2DAB-4884-B50E-D7CF357FDB47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC_Container_Demo", "IoC_Container_Demo\IoC_Container_Demo.csproj", "{85BE8B48-439D-4EC9-9A85-AB9A9E4970D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{06018BFF-2DAB-4884-B50E-D7CF357FDB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06018BFF-2DAB-4884-B50E-D7CF357FDB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06018BFF-2DAB-4884-B50E-D7CF357FDB47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85BE8B48-439D-4EC9-9A85-AB9A9E4970D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85BE8B48-439D-4EC9-9A85-AB9A9E4970D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85BE8B48-439D-4EC9-9A85-AB9A9E4970D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85BE8B48-439D-4EC9-9A85-AB9A9E4970D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
