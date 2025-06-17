@@ -50,7 +50,8 @@ namespace Ecommerce
             {
                 Console.WriteLine($"An unexpected error occurred: {ex.Message}");
             }
-        
-    }
+
+            Console.ReadKey();
+        }
     }
 }

@@ -2,21 +2,24 @@
 using ChainOfResponsibilityDemo.Example_02;
 using ChainOfResponsibilityDemo.Example_03;
 using ChainOfResponsibilityDemo.Example_04;
+using ChainOfResponsibilityDemo.Example_05;
+using System.Threading.Tasks;
 
 namespace ChainOfResponsibilityDemo
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             // Example_01_Demo();
             // Example_02_Demo();
             // Example_03_Demo();
-            Example_04_Demo();
+            // Example_04_Demo();
+            // await Example_05_Demo();
             Console.ReadKey();
         }
 
-        static void Example_01_Demo() 
+        static void Example_01_Demo()
         {
             // Create the support handlers
             var level3SupportHandler = new Level3SupportHandler();
@@ -37,7 +40,6 @@ namespace ChainOfResponsibilityDemo
             level1SupportHandler.HandleTicket(ticket2);
             level1SupportHandler.HandleTicket(ticket3);
         }
-
         static void Example_02_Demo()
         {
             // Create the request handlers
@@ -55,8 +57,7 @@ namespace ChainOfResponsibilityDemo
             // Process the request
             authenticationHandler.HandleRequest(request);
         }
-
-        static void Example_03_Demo() 
+        static void Example_03_Demo()
         {
             // Create the order handlers
             var validationHandler = new Example_03.ValidationHandler();
@@ -75,7 +76,6 @@ namespace ChainOfResponsibilityDemo
             // Process the order
             validationHandler.ProcessOrder(order);
         }
-
         static void Example_04_Demo()
         {
             // Setup Chain of Responsibility
@@ -93,6 +93,34 @@ namespace ChainOfResponsibilityDemo
             larry.ProcessRequest(purchase);
             // Wait for user
             Console.ReadKey();
+        }
+
+        static async Task Example_05_Demo()
+        {
+            // Build the middleware pipeline
+            var pipeline = new MiddlewareHandler(async (request, next) =>
+            {
+                Console.WriteLine("Middleware 1 processing request");
+                await next(); // Continue to next
+            })
+            .SetNext(new MiddlewareHandler(async (request, next) =>
+            {
+                Console.WriteLine("Middleware 2 processing request");
+                await next(); // Continue to next
+            }))
+            .SetNext(new MiddlewareHandler(async (request, next) =>
+            {
+                Console.WriteLine("Middleware 3 processing request");
+                await next(); // Final one, next is null
+            }))
+            .SetNext(new MiddlewareHandler(async (request, next) =>
+            {
+                Console.WriteLine("Middleware 4 processing request");
+                await next(); // Final one, next is null
+            }));
+
+            // Start the pipeline
+            await pipeline.Invoke("Request");
         }
     }
 }
