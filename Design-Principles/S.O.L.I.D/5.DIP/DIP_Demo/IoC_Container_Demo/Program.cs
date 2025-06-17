@@ -35,7 +35,8 @@ namespace IoC_Container_Demo
 
             var resolver = new Resolver();
             resolver.Registery<Refactored.Contracts.IDataAccess, Refactored.CustomerDataAccess>();
-            // var customerLogic = new Refactored.CustomerBusinessLogic(resolvre.Resolve<Refactored.Contracts.IDataAccess>());
+            resolver.Registery<Refactored.CustomerBusinessLogic>();
+
             var customerLogic = resolver.Resolve<Refactored.CustomerBusinessLogic>();
             Console.WriteLine(customerLogic.ProcessCustomerData(1));
         }
