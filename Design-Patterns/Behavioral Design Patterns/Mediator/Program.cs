@@ -1,13 +1,11 @@
-﻿using Mediator.Violation.Components;
-using Mediator.Violation.Dialogs;
-using Mediator.Violation.Forms;
+﻿using Mediator.Violation.Dialogs;
 using System.Text;
 
 Console.OutputEncoding = Encoding.UTF8;
 
 Console.WriteLine("🔄 === Mediator Pattern Example ===\n");
 
-var dialog = new ProfileDialog();
+var dialog = new Mediator.Refactored.Dialogs.ProfileDialog();
 dialog.Show();
 
 Console.WriteLine("Press any key to continue");

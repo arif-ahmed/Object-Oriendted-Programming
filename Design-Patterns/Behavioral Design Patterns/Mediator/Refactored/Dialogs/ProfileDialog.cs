@@ -7,7 +7,7 @@ public class ProfileDialog
     public Components.TextBox NameTextBox { get; set; }
     public CheckBox HasPetCheckBox { get; set; }
     public TextBox? PetDescriptionTextBox { get; set; }
-    public Button SaveButton { get; set; }
+    public Components.Button SaveButton { get; set; }
 
     public IList<string> Errors { get; set; } = new List<string>();
 
@@ -17,11 +17,11 @@ public class ProfileDialog
     {
         NameTextBox = new Components.TextBox(Mediator, "Enter your name"); 
         HasPetCheckBox = new CheckBox("Do you have a pet");
-        SaveButton = new Button("Save")
+        SaveButton = new Components.Button(Mediator, "Save")
         {
             OnClick = () =>
             {
-                Mediator.Notify(this, new ButtonEventArgs());
+                Mediator.Notify(SaveButton!, new ButtonEventArgs());
             }
         };
     }
@@ -33,10 +33,7 @@ public class ProfileDialog
         NameTextBox.Render();
         NameTextBox.Event += (s, e) =>
         {
-            if (string.IsNullOrEmpty(NameTextBox.Value))
-            {
-                Errors.Add("Name cannot be empty.");
-            }            
+            Mediator.Notify(s!, e);
         };
 
         HasPetCheckBox.Render();

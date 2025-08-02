@@ -11,7 +11,7 @@ public class ProfileDialogMediator : IMediator
 
     public void Notify(object sender, EventArgs args)
     {
-        if(sender is Button button)
+        if (sender is Button button)
         {
             if (button.Label == "Save")
             {
@@ -50,9 +50,13 @@ public class ProfileDialogMediator : IMediator
             }
         }
         else if(sender is TextBox textBox)
-        {
+        {          
             // Handle text box input
             Console.WriteLine($"Input received: {textBox.Value}");
-        }       
+        }
+        else if(sender is CheckBox checkBox)
+        {
+
+        }
     }
 }
