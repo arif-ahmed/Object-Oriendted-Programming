@@ -52,10 +52,12 @@ public class ProfileDialog
         NameTextBox.Render();
         NameTextBox.Event += (s, e) =>
         {
-            if (string.IsNullOrEmpty(NameTextBox.Value))
-            {
-                Errors.Add("Name cannot be empty.");
-            }
+            //if (string.IsNullOrEmpty(NameTextBox.Value))
+            //{
+            //    Errors.Add("Name cannot be empty.");
+            //}
+
+            
         };
 
         HasPetCheckBox.Render();
